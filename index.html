@@ -15,7 +15,59 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <h1>This is my test</h1>
+    <h1>Wetterfee</h1>
+    <!--  city | date  -->
+    <div class="weather">
+      <div class="col-sm-4 col 12 mt-1">
+        <ul>
+          <li><h2>Munich</h2></li>
+          <li><div id="displayDateTime"></div></li>
+        </ul>
+      </div>
+
+      <!--  units | search bar  -->
+
+      <!--  fun button  -->
+
+      <button id="perfectWeatherbutton" type="button" class="btn btn-info">
+        ✨ Book your favourite weather here! ✨
+      </button>
+
+      <!--  today weather  -->
+
+      <!--  next few days  -->
+      <table class="table-responsive-sm">
+        <caption>
+          Weather forecast of the next few days
+        </caption>
+        <tbody>
+          <tr>
+            <td class="table-info">Day 1</td>
+            <td class="table-info">Day 2</td>
+            <td class="table-info">Day 3</td>
+            <td class="table-info">Day 4</td>
+          </tr>
+          <tr>
+            <th id="weatherIconDayOne">🌧</th>
+            <td id="weatherIconDayTwo">⛅</td>
+            <td id="weatherIconDayThree">🌩</td>
+            <td id="weatherIconDayFour">☀</td>
+          </tr>
+          <tr>
+            <th id="temperaturDayOne">test</th>
+            <td id="temperaturDayTwo">Temperatur Day 2</td>
+            <td id="temperaturDayThree">Temperatur Day 3</td>
+            <td id="temperaturDayFour">Temperatur Day 4</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
   <script src="src/index.js"></script>
 </html>
