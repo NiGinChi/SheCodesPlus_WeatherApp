@@ -11,29 +11,100 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>GIT Hub Testing</title>
+
+    <title>Weather App Wetterfee</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <h1>Wetterfee</h1>
-    <!--  city | date  -->
-    <div class="weather">
-      <div class="col-sm-4 col 12 mt-1">
-        <ul>
-          <li><h2>Munich</h2></li>
-          <li><div id="displayDateTime"></div></li>
-        </ul>
-      </div>
 
-      <!--  units | search bar  -->
-
+    <div id="weatherfairyWiki">
+      <p>
+        The
+        <a
+          href="https://de.wikipedia.org/wiki/Fee#Wetterfee"
+          alt="Wikipedia Wetterfee"
+          >Wetterfee</a
+        >
+        (German for <i>'weather fairy')</i> is a mythological being that can
+        influence the weather.
+      </p>
       <!--  fun button  -->
 
       <button id="perfectWeatherbutton" type="button" class="btn btn-info">
         ✨ Book your favourite weather here! ✨
       </button>
+    </div>
+
+    <!--  city | date  -->
+    <div class="weather">
+      <div class="col-sm-4 col 12 mt-1">
+        <ul>
+          <li><h2 id="city">Munich</h2></li>
+          <li>
+            <img
+              src="src/icons/calendar3.svg"
+              alt="calendar"
+              class="bootstrap-icon"
+            />
+            <span id="displayDate"> </span>
+            <img src="src/icons/clock.svg" alt="clock" class="bootstrap-icon" />
+            <span id="displayTime"> </span>
+          </li>
+        </ul>
+      </div>
+
+      <!--  units | search bar  -->
+
+      <div class="row">
+        <div class="col-sm">
+          <form class="form-inline my-2 my-lg-0 new-form" id="new-form">
+            <input
+              class="city-search"
+              id="city-input"
+              type="search"
+              placeholder="Enter location 🔍"
+              autocomplete="off"
+              autofocus="on"
+            />
+            <div>
+              <button
+                class="search-button btn btn-info my-2 my-sm-12"
+                type="submit"
+                id="searchButton"
+              >
+                Show Weather!
+              </button>
+            </div>
+            <div>
+              <button
+                class="search-button btn btn-info my-2 my-sm-12"
+                type="submit"
+                id="currentButton"
+              >
+                Your location
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
       <!--  today weather  -->
+      <div class="container p-5">
+        <div class="col-sm">
+          <div class="daytemperatur" id="todayTemperature"></div>
+          <div class="units">°C</div>
+          <div id="todayTemperature-description">cloudy</div>
+        </div>
+        <div class="col-sm">
+          Humidity:
+          <div id="todayHumidity"></div>
+        </div>
+        <div class="col-sm">
+          Wind Speed:
+          <div id="todayWindspeed"></div>
+        </div>
+      </div>
 
       <!--  next few days  -->
       <table class="table-responsive-sm">
@@ -68,6 +139,12 @@
         </tbody>
       </table>
     </div>
+    <footer>
+      <a href="https://github.com/NiGinChi?tab=repositories" target="_blank">
+        Coded
+      </a>
+      by learning enthuiast Nina Kroner
+    </footer>
+    <script src="src/index.js"></script>
   </body>
-  <script src="src/index.js"></script>
 </html>
