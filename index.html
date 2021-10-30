@@ -17,9 +17,9 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <title>Weather App Wetterfee</title>
     <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App Wetterfee</title>
+    
   </head>
   <body>
     <div class="container">
@@ -37,12 +37,6 @@
           (German for <i>'weather fairy')</i> is a mythological being that can
           influence the weather.
         </p>
-        <!--  fun button  -->
-
-        <button id="perfectWeatherbutton" type="button" class="btn btn-info">
-          ✨ Book your favourite weather here! ✨
-        </button>
-      </div>
 
       <!--  units | search bar  -->
 
@@ -55,7 +49,7 @@
               type="search"
               placeholder="Enter location 🔍"
               autocomplete="off"
-              autofocus="off"
+              autofocus="on"
             />
 
             <div>
@@ -104,13 +98,13 @@
 
         <!--  today weather  -->
         <div class="row">
-          <div class="weather">
+          
           <div class="col-6">
              <div class="today-weather">
                 <img src="src/icons/sun.svg" alt="clear" id="icon" class="float-left" />
                 <div class="float-left">
                   <strong class="daytemperatur" id="todayTemperature"></strong
-                  ><span class="units"> °C</span>
+                  ><span class="units"> </span>
                 </div>
               </div>  
 
@@ -122,12 +116,13 @@
               <li>Wind: <span id="todayWindspeed"></span> </li></li>
             </ul>
             <div class="daytemperatur" id="todayTemperature"></div>
-            <div class="units">°C</div>
             
-          </div>
+            
+          
         </div>
 
         <!--  next few days  -->
+        <div class="row">
         <table class="table-responsive-sm">
           <caption>
             Weather forecast of the next few days
@@ -159,15 +154,26 @@
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
+              <!--  fun button  -->
+
+        <button id="perfectWeatherbutton" type="button" class="btn btn-info">
+          ✨ ...or book your favourite weather here! ✨
+        </button>
+      </div>
+
       <footer>
+        <small>
         <a href="https://github.com/NiGinChi?tab=repositories" target="_blank">
           Open-source code
         </a>
         by learning enthuiast Nina Kroner
+        </small>
       </footer>
-      </div>
     </div>
     <script src="src/index.js"></script>
+    </div>
+    
   </body>
 </html>
