@@ -22,48 +22,31 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <h1>Wetterfee</h1>
+    <div class="container">
+      <h1>Wetterfee</h1>
 
-    <div id="weatherfairyWiki">
-      <p>
-        The
-        <a
-          href="https://de.wikipedia.org/wiki/Fee#Wetterfee"
-          alt="Wikipedia Wetterfee"
-          >Wetterfee</a
-        >
-        (German for <i>'weather fairy')</i> is a mythological being that can
-        influence the weather.
-      </p>
-      <!--  fun button  -->
+      <div id="weatherfairyWiki">
+        <p>
+          The
+          <a
+            href="https://de.wikipedia.org/wiki/Fee#Wetterfee"
+            alt="Wikipedia Wetterfee"
+            >Wetterfee</a
+          >
+          (German for <i>'weather fairy')</i> is a mythological being that can
+          influence the weather.
+        </p>
+        <!--  fun button  -->
 
-      <button id="perfectWeatherbutton" type="button" class="btn btn-info">
-        ✨ Book your favourite weather here! ✨
-      </button>
-    </div>
-
-    <!--  city | date  -->
-    <div class="weather">
-      <div class="col-sm-4 col 12 mt-1">
-        <ul>
-          <li><h2 id="city">Munich</h2></li>
-          <li>
-            <img
-              src="src/icons/calendar3.svg"
-              alt="calendar"
-              class="bootstrap-icon"
-            />
-            <span id="displayDate"> </span>
-            <img src="src/icons/clock.svg" alt="clock" class="bootstrap-icon" />
-            <span id="displayTime"> </span>
-          </li>
-        </ul>
+        <button id="perfectWeatherbutton" type="button" class="btn btn-info">
+          ✨ Book your favourite weather here! ✨
+        </button>
       </div>
 
       <!--  units | search bar  -->
 
       <div class="row">
-        <div class="col-sm">
+        <div class="col-6">
           <form class="form-inline my-2 my-lg-0 new-form" id="new-form">
             <input
               class="city-search"
@@ -71,8 +54,9 @@
               type="search"
               placeholder="Enter location 🔍"
               autocomplete="off"
-              autofocus="on"
+              autofocus="off"
             />
+
             <div>
               <button
                 class="search-button btn btn-info my-2 my-sm-12"
@@ -95,62 +79,85 @@
         </div>
       </div>
 
-      <!--  today weather  -->
-      <div class="container p-5">
-        <div class="col-sm">
-          <div class="daytemperatur" id="todayTemperature"></div>
-          <div class="units">°C</div>
-          <div id="todayTemperature-description">cloudy</div>
+      <!--  city | date  -->
+      <div class="weather">
+        <div class="col-sm-4 col 12 mt-1">
+          <ul>
+            <li><h2 id="city">Munich</h2></li>
+            <li>
+              <img
+                src="src/icons/calendar3.svg"
+                alt="calendar"
+                class="bootstrap-icon"
+              />
+              <span id="displayDate"> </span>
+              <img
+                src="src/icons/clock.svg"
+                alt="clock"
+                class="bootstrap-icon"
+              />
+              <span id="displayTime"> </span>
+            </li>
+          </ul>
         </div>
-        <div class="col-sm">
-          Humidity:
-          <div id="todayHumidity"></div>
-        </div>
-        <div class="col-sm">
-          Wind Speed:
-          <div id="todayWindspeed"></div>
-        </div>
-      </div>
 
-      <!--  next few days  -->
-      <table class="table-responsive-sm">
-        <caption>
-          Weather forecast of the next few days
-        </caption>
-        <tbody>
-          <tr>
-            <td class="table-info">Day 1</td>
-            <td class="table-info">Day 2</td>
-            <td class="table-info">Day 3</td>
-            <td class="table-info">Day 4</td>
-          </tr>
-          <tr>
-            <th id="weatherIconDayOne">🌧</th>
-            <td id="weatherIconDayTwo">⛅</td>
-            <td id="weatherIconDayThree">🌩</td>
-            <td id="weatherIconDayFour">☀</td>
-          </tr>
-          <tr>
-            <th id="temperaturDayOne">test</th>
-            <td id="temperaturDayTwo">Temperatur Day 2</td>
-            <td id="temperaturDayThree">Temperatur Day 3</td>
-            <td id="temperaturDayFour">Temperatur Day 4</td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+        <!--  today weather  -->
+        <div class="container p-5">
+          <div class="col-sm">
+            <div class="daytemperatur" id="todayTemperature"></div>
+            <div class="units">°C</div>
+            <div id="todayTemperature-description">cloudy</div>
+          </div>
+          <div class="col-sm">
+            Humidity:
+            <div id="todayHumidity"></div>
+          </div>
+          <div class="col-sm">
+            Wind Speed:
+            <div id="todayWindspeed"></div>
+          </div>
+        </div>
+
+        <!--  next few days  -->
+        <table class="table-responsive-sm">
+          <caption>
+            Weather forecast of the next few days
+          </caption>
+          <tbody>
+            <tr>
+              <td class="table-info">Day 1</td>
+              <td class="table-info">Day 2</td>
+              <td class="table-info">Day 3</td>
+              <td class="table-info">Day 4</td>
+            </tr>
+            <tr>
+              <th id="weatherIconDayOne">🌧</th>
+              <td id="weatherIconDayTwo">⛅</td>
+              <td id="weatherIconDayThree">🌩</td>
+              <td id="weatherIconDayFour">☀</td>
+            </tr>
+            <tr>
+              <th id="temperaturDayOne">test</th>
+              <td id="temperaturDayTwo">Temperatur Day 2</td>
+              <td id="temperaturDayThree">Temperatur Day 3</td>
+              <td id="temperaturDayFour">Temperatur Day 4</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <footer>
+        <a href="https://github.com/NiGinChi?tab=repositories" target="_blank">
+          Open-source code
+        </a>
+        by learning enthuiast Nina Kroner
+      </footer>
     </div>
-    <footer>
-      <a href="https://github.com/NiGinChi?tab=repositories" target="_blank">
-        Coded
-      </a>
-      by learning enthuiast Nina Kroner
-    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>
