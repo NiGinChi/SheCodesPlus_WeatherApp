@@ -15,7 +15,7 @@ let date =
   today.getDate() + "." + (today.getMonth() + 1) + "." + today.getFullYear();
 
 let hour = today.getHours();
-if (hour < 9) {
+if (hour < 10) {
   hour = `0${hour}`;
 }
 let minutes = today.getMinutes();

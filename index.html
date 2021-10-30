@@ -23,6 +23,7 @@
   </head>
   <body>
     <div class="container">
+      <div class="weather-app">
       <h1>Wetterfee</h1>
 
       <div id="weatherfairyWiki">
@@ -46,7 +47,7 @@
       <!--  units | search bar  -->
 
       <div class="row">
-        <div class="col-6">
+        <div class="col-md-6">
           <form class="form-inline my-2 my-lg-0 new-form" id="new-form">
             <input
               class="city-search"
@@ -80,7 +81,7 @@
       </div>
 
       <!--  city | date  -->
-      <div class="weather">
+      
         <div class="col-sm-4 col 12 mt-1">
           <ul>
             <li><h2 id="city">Munich</h2></li>
@@ -102,19 +103,27 @@
         </div>
 
         <!--  today weather  -->
-        <div class="container p-5">
-          <div class="col-sm">
+        <div class="row">
+          <div class="weather">
+          <div class="col-6">
+             <div class="today-weather">
+                <img src="src/icons/sun.svg" alt="clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong class="daytemperatur" id="todayTemperature"></strong
+                  ><span class="units"> °C</span>
+                </div>
+              </div>  
+
+          </div>
+          <div class="col-6">
+            <ul>
+              <li id="todayTemperature-description">cloudy</li>
+              <li>Humidity: <span id="todayHumidity"></span> </li>
+              <li>Wind: <span id="todayWindspeed"></span> </li></li>
+            </ul>
             <div class="daytemperatur" id="todayTemperature"></div>
             <div class="units">°C</div>
-            <div id="todayTemperature-description">cloudy</div>
-          </div>
-          <div class="col-sm">
-            Humidity:
-            <div id="todayHumidity"></div>
-          </div>
-          <div class="col-sm">
-            Wind Speed:
-            <div id="todayWindspeed"></div>
+            
           </div>
         </div>
 
@@ -157,6 +166,7 @@
         </a>
         by learning enthuiast Nina Kroner
       </footer>
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>
