@@ -64,7 +64,6 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 // weather of city -->
 
 function showWeather(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#todayTemperature").innerHTML = Math.round(
     response.data.main.temp
