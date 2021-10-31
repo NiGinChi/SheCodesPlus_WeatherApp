@@ -68,7 +68,6 @@ function showWeather(response) {
   document.querySelector("#todayTemperature").innerHTML = Math.round(
     response.data.main.temp
   );
-
   document.querySelector(
     "#todayHumidity"
   ).innerHTML = `${response.data.main.humidity}%`;
@@ -77,4 +76,12 @@ function showWeather(response) {
   )}km/h`;
   document.querySelector("#todayTemperature-description").innerHTML =
     response.data.weather[0].main;
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
