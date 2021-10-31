@@ -50,6 +50,10 @@ li:first-letter {
   margin: 30px auto;
 }
 
+.overview {
+  margin-bottom: 20px;
+}
+
 .city-search {
   max-width: 300px;
   color: #17a2b8;
@@ -66,4 +70,23 @@ li:first-letter {
   border-radius: 6px;
   height: 50px;
   line-height: 20px;
+}
+
+.today-weather img {
+  margin-left: 10px;
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+
+.today-weather strong {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.today-weather .units {
+  position: relative;
+  font-size: 16px;
+  top: -25px;
 }

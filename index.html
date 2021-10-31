@@ -19,164 +19,183 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App Wetterfee</title>
-    
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-      <div class="weather-app">
-      <h1>Wetterfee</h1>
+        <div class="weather-app">
+          <h1>Wetterfee</h1>
 
-      <div id="weatherfairyWiki">
-        <p>
-          The
-          <a
-            href="https://de.wikipedia.org/wiki/Fee#Wetterfee"
-            alt="Wikipedia Wetterfee"
-            >Wetterfee</a
-          >
-          (German for <i>'weather fairy')</i> is a mythological being that can
-          influence the weather.
-        </p>
-
-      <!--  units | search bar  -->
-
-      <div class="row">
-        <div class="col-md-6">
-          <form class="form-inline my-2 my-lg-0 new-form" id="new-form">
-            <input
-              class="city-search"
-              id="city-input"
-              type="search"
-              placeholder="Enter location 🔍"
-              autocomplete="off"
-              autofocus="on"
-            />
-
-            <div>
-              <button
-                class="search-button btn btn-info my-2 my-sm-12"
-                type="submit"
-                id="searchButton"
+          <div id="weatherfairyWiki">
+            <p>
+              The
+              <a
+                href="https://de.wikipedia.org/wiki/Fee#Wetterfee"
+                alt="Wikipedia Wetterfee"
               >
-                Show Weather
-              </button>
-            </div>
-            <div>
-              <button
-                class="search-button btn btn-info my-2 my-sm-12"
-                type="submit"
-                id="currentButton"
-              >
-                Your Location
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+                Wetterfee
+              </a>
+              (German for <i>'weather fairy')</i> is a mythological being that
+              can influence the weather.
+            </p>
 
-      <!--  city | date  -->
-      
-        <div class="col-sm-12 col 12 mt-1">
-          <ul>
-            <li><h2 id="city">Munich</h2></li>
-            <li>
-              <img
-                src="src/icons/calendar3.svg"
-                alt="calendar"
-                class="bootstrap-icon"
-              />
-              <span id="displayDate"> </span>
-            </li>
-            <li>
-                <img
-                src="src/icons/clock.svg"
-                alt="clock"
-                class="bootstrap-icon"
-              />
-              <span id="displayTime"> </span>
-            </li>
-          </ul>
-        </div>
+            <!--  units | search bar  -->
 
-        <!--  today weather  -->
-        <div class="row">
-          
-          <div class="col-sm-6 col 12 mt-1">
-             <div class="today-weather">
-                <img src="src/icons/sun.svg" alt="clear" id="icon" class="float-left" />
-                <div class="float-left">
-                  <strong class="daytemperatur" id="todayTemperature"></strong
-                  ><span class="units"> </span>
+            <div class="row">
+              <div class="col-md-6">
+                <form class="form-inline my-2 my-lg-0 new-form" id="new-form">
+                  <input
+                    class="city-search"
+                    id="city-input"
+                    type="search"
+                    placeholder="Enter location 🔍"
+                    autocomplete="off"
+                    autofocus="on"
+                  />
+
+                  <div>
+                    <button
+                      class="search-button btn btn-info my-2 my-sm-12"
+                      type="submit"
+                      id="searchButton"
+                    >
+                      Show Weather
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      class="search-button btn btn-info my-2 my-sm-12"
+                      type="submit"
+                      id="currentButton"
+                    >
+                      Your Location
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!--  city | date  -->
+
+            <div class="col-sm-12 col 12 mt-1">
+              <div class="overview">
+                <ul>
+                  <li>
+                    <h2 id="city">Munich</h2>
+                  </li>
+                  <li>
+                    <img
+                      src="src/icons/calendar3.svg"
+                      alt="calendar"
+                      class="bootstrap-icon"
+                    />
+                    <span id="displayDate"> </span>
+                  </li>
+                  <li>
+                    <img
+                      src="src/icons/clock.svg"
+                      alt="clock"
+                      class="bootstrap-icon"
+                    />
+                    <span id="displayTime"> </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!--  today weather  -->
+            <div class="row">
+              <div class="col-sm-6 col 12 mt-1">
+                <div class="bg-info clearfix">
+                  <div class="today-weather">
+                    <img
+                      src="src/icons/sun.svg"
+                      alt="clear"
+                      id="icon"
+                      class="float-left"
+                    />
+                    <div class="float-left">
+                      <strong class="daytemperatur" id="todayTemperature"
+                        >12</strong
+                      ><span class="units">°C | °F</span>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col 12 mt-1">
+                    <ul>
+                      <li id="todayTemperature-description">cloudy</li>
+                      <li>
+                        Humidity:
+                        <span id="todayHumidity"> </span>
+                      </li>
+                      <li>
+                        Wind:
+                        <span id="todayWindspeed"> </span>
+                      </li>
+                    </ul>
+                    <div class="daytemperatur" id="todayTemperature"></div>
+                  </div>
                 </div>
-              </div>  
+              </div>
+              <!--  next few days  -->
+              <div class="row">
+                <table class="table-responsive-sm">
+                  <caption>
+                    Weather forecast of the next few days
+                  </caption>
+                  <tbody>
+                    <tr>
+                      <td class="table-info">Day 1</td>
+                      <td class="table-info">Day 2</td>
+                      <td class="table-info">Day 3</td>
+                      <td class="table-info">Day 4</td>
+                    </tr>
+                    <tr>
+                      <th id="weatherIconDayOne">🌧</th>
+                      <td id="weatherIconDayTwo">⛅</td>
+                      <td id="weatherIconDayThree">🌩</td>
+                      <td id="weatherIconDayFour">☀</td>
+                    </tr>
+                    <tr>
+                      <th id="temperaturDayOne">test</th>
+                      <td id="temperaturDayTwo">Temperatur Day 2</td>
+                      <td id="temperaturDayThree">Temperatur Day 3</td>
+                      <td id="temperaturDayFour">Temperatur Day 4</td>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!--  fun button  -->
 
+            <button
+              id="perfectWeatherbutton"
+              type="button"
+              class="btn btn-info"
+            >
+              ✨ ...or book your favourite weather here! ✨
+            </button>
           </div>
-          <div class="col-sm-6 col 12 mt-1">
-            <ul>
-              <li id="todayTemperature-description">cloudy</li>
-              <li>Humidity: <span id="todayHumidity"></span> </li>
-              <li>Wind: <span id="todayWindspeed"></span> </li></li>
-            </ul>
-            <div class="daytemperatur" id="todayTemperature"></div>
-            
-            
-          
-        </div>
-
-        <!--  next few days  -->
-        <div class="row">
-        <table class="table-responsive-sm">
-          <caption>
-            Weather forecast of the next few days
-          </caption>
-          <tbody>
-            <tr>
-              <td class="table-info">Day 1</td>
-              <td class="table-info">Day 2</td>
-              <td class="table-info">Day 3</td>
-              <td class="table-info">Day 4</td>
-            </tr>
-            <tr>
-              <th id="weatherIconDayOne">🌧</th>
-              <td id="weatherIconDayTwo">⛅</td>
-              <td id="weatherIconDayThree">🌩</td>
-              <td id="weatherIconDayFour">☀</td>
-            </tr>
-            <tr>
-              <th id="temperaturDayOne">test</th>
-              <td id="temperaturDayTwo">Temperatur Day 2</td>
-              <td id="temperaturDayThree">Temperatur Day 3</td>
-              <td id="temperaturDayFour">Temperatur Day 4</td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
+          <footer>
+            <small>
+              <a
+                href="https://github.com/NiGinChi?tab=repositories"
+                target="_blank"
+              >
+                Open-source code
+              </a>
+              by learning enthuiast Nina Kroner
+            </small>
+          </footer>
         </div>
       </div>
-              <!--  fun button  -->
-
-        <button id="perfectWeatherbutton" type="button" class="btn btn-info">
-          ✨ ...or book your favourite weather here! ✨
-        </button>
-      </div>
+      <script src="src/index.js"></script>
     </div>
-      <footer>
-        <small>
-        <a href="https://github.com/NiGinChi?tab=repositories" target="_blank">
-          Open-source code
-        </a>
-        by learning enthuiast Nina Kroner
-        </small>
-      </footer>
-</div>
-    <script src="src/index.js"></script>
-    </div>
-    
   </body>
 </html>
