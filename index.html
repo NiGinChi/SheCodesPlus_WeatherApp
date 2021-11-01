@@ -40,11 +40,10 @@
             </p>
 
             <!--  units | search bar  -->
-
+          <form class="form-inline my-2 my-lg-0 new-form" id="new-form">
             <div class="row">
               <div class="col-md-6">
-                <form class="form-inline my-2 my-lg-0 new-form" id="new-form">
-                  <input
+                <input
                     class="city-search"
                     id="city-input"
                     type="search"
@@ -52,28 +51,31 @@
                     autocomplete="off"
                     autofocus="on"
                   />
-
-                  <div>
-                    <button
-                      class="search-button btn btn-info my-2 my-sm-12"
+              </div>
+              <div class="col-md-6">
+                <button
+                      class="search-button btn btn-info my-2 my-sm-12 w-100"
                       type="submit"
                       id="searchButton"
                     >
-                      Show Weather
-                    </button>
-                  </div>
-                  <div>
-                    <button
+                    Show weather
+                  </button>
+                </div>
+              </div>
+             <div>
+               <button
                       class="search-button btn btn-info my-2 my-sm-12"
                       type="submit"
                       id="currentButton"
-                    >
-                      Your Location
-                    </button>
-                  </div>
-                </form>
+                    >Your Location
+                </button>
               </div>
-            </div>
+          </form>
+
+                
+                
+              
+            
 
             <!--  city | date  -->
 
@@ -104,75 +106,49 @@
             </div>
 
             <!--  today weather  -->
+
             <div class="row">
-              <div class="col-sm-6 col 12 mt-1">
-                <div class="bg-info clearfix">
+              <div class="col-sm">
+                <div class="clearfix">
                   <div class="today-weather">
                     <img src="" alt="clear" id="icon" class="float-left" />
                     <div class="float-left">
                       <strong class="daytemperatur" id="todayTemperature"
-                        >12</strong
-                      ><span class="units">°C | °F</span>
+                        >12</strong>
+                        <span class="units">
+                          °C | 
+                        <a href="#" id="fahrenheit-link">
+                          °F
+                        </a>
+                      </span>
                     </div>
-                  </div>
-
-                  <div class="col-sm-6 col 12 mt-1">
-                    <ul>
-                      <li id="todayTemperature-description">cloudy</li>
-                      <li>
-                        Humidity:
-                        <span id="todayHumidity"> </span>
-                      </li>
-                      <li>
-                        Wind:
-                        <span id="todayWindspeed"> </span>
-                      </li>
-                    </ul>
-                    <div class="daytemperatur" id="todayTemperature"></div>
                   </div>
                 </div>
               </div>
-              <!--  next few days  -->
-              <div class="row">
-                <table class="table-responsive-sm">
-                  <caption>
-                    Weather forecast of the next few days
-                  </caption>
-                  <tbody>
-                    <tr>
-                      <td class="table-info">Day 1</td>
-                      <td class="table-info">Day 2</td>
-                      <td class="table-info">Day 3</td>
-                      <td class="table-info">Day 4</td>
-                    </tr>
-                    <tr>
-                      <th id="weatherIconDayOne">🌧</th>
-                      <td id="weatherIconDayTwo">⛅</td>
-                      <td id="weatherIconDayThree">🌩</td>
-                      <td id="weatherIconDayFour">☀</td>
-                    </tr>
-                    <tr>
-                      <th id="temperaturDayOne">test</th>
-                      <td id="temperaturDayTwo">Temperatur Day 2</td>
-                      <td id="temperaturDayThree">Temperatur Day 3</td>
-                      <td id="temperaturDayFour">Temperatur Day 4</td>
-                    </tr>
-                    <tr>
-                      <th>3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="col-sm">
+                  <ul>
+                    <li id="todayTemperature-description">cloudy</li>
+                    <li>
+                      Humidity:
+                      <span id="todayHumidity"> </span>
+                    </li>
+                    <li>
+                      Wind:
+                      <span id="todayWindspeed"> </span>
+                    </li>
+                  </ul>
+                  <div class="daytemperatur" id="todayTemperature"></div>
+                </div>
               </div>
             </div>
+            <!--  next few days  -->
+
             <!--  fun button  -->
 
             <button
               id="perfectWeatherbutton"
               type="button"
-              class="btn btn-info"
+              class="btn btn-info mt-3 mb-3"
             >
               ✨ ...or book your favourite weather here! ✨
             </button>
@@ -183,9 +159,13 @@
                 href="https://github.com/NiGinChi?tab=repositories"
                 target="_blank"
               >
-                Open-source code
-              </a>
-              by learning enthuiast Nina Kroner
+                Open-source code</a>
+              by learning enthusiast 
+              <a
+                href="https://www.linkedin.com/in/nina-kroner/"
+                target="_blank"
+              >
+                Nina Kroner</a>
             </small>
           </footer>
         </div>
