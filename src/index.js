@@ -90,15 +90,28 @@ function showWeather(response) {
 
 // units conversion -->
 
+let celciusTemperature = null;
+
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   let fahrenheittemperatureElement =
     document.querySelector("#todayTemperature");
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   fahrenheittemperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelciusTemperature(event) {
+  event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let celciustemperatureElement = document.querySelector("#todayTemperature");
+  celciustemperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celciusTemperature = null;
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
