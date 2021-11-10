@@ -115,3 +115,16 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
+
+document
+  .querySelector("#perfectWeatherbutton")
+  .addEventListener("click", function favouriteWeather(event) {
+    let favouriteTemperature = prompt("What is your favourite temperature?");
+    if (favouriteTemperature.length) {
+      alert("Thank you! 💌 Your order has been recieved by the Wetterfee.");
+    } else {
+      alert(
+        "Warning ⚠ Without your order we cannot contact the Wetterfee to book your favourite weather."
+      );
+    }
+  });
