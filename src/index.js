@@ -124,7 +124,7 @@ document
       alert("Thank you! 💌 Your order has been recieved by the Wetterfee.");
     } else {
       alert(
-        "Warning ⚠ Without your order we cannot contact the Wetterfee to book your favourite weather."
+        "Warning ⚠ Without your input we cannot contact the Wetterfee to book your favourite weather."
       );
     }
   });
