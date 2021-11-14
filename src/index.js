@@ -149,9 +149,10 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    forecastHTML =
-      forecastHTML +
-      `
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2">
       <div class="weather-forecast-date">
         ${formatForecastDay(forecastDay.dt)}</div>
@@ -167,6 +168,7 @@ function displayForecast(response) {
         </div>
       </div>    
    `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -181,6 +183,28 @@ document
     let favouriteTemperature = prompt("What is your favourite temperature?");
     if (favouriteTemperature.length) {
       alert("Thank you! 💌 Your order has been recieved by the Wetterfee.");
+
+      forecast.forEach(function (forecastDay, index) {
+        if (index < 6) {
+          forecastHTML =
+            forecastHTML +
+            `
+    <div class="col-2">
+      <div class="weather-forecast-date">
+        ${formatForecastDay(forecastDay.dt)}</div>
+      <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" width="42" />
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature-max">
+          ${favouriteTemperature}°</span>
+          <span class="weather-forecast-temperature-min">
+          ${favouriteTemperature - 1}°</span>
+        </div>
+      </div>    
+   `;
+        }
+      });
+      forecastHTML = forecastHTML + `</div>`;
+      forecastElement.innerHTML = forecastHTML;
     } else {
       alert(
         "Warning ⚠ Without your input we cannot contact the Wetterfee to book your favourite weather."
