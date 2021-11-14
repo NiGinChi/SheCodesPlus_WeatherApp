@@ -77,8 +77,8 @@ li:first-letter {
   margin-left: 10px;
   margin-right: 5px;
   margin-bottom: 50px;
-  height: 64px;
-  width: 64px;
+  height: 72px;
+  width: 72px;
 }
 
 .today-weather strong {
@@ -108,12 +108,21 @@ li:first-letter {
 }
 
 .weather-forecast-date {
+  text-align: center;
   font-size: 16px;
   font-weight: 400;
   opacity: 0.6;
 }
 
+.weather-forecast-date img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+
 .weather-forecast-temperatures {
+  text-align: center;
   font-size: 13px;
 }
 
