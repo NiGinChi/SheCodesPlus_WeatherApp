@@ -87,7 +87,14 @@ function showWeather(response) {
 
   celciusTemperature = response.data.main.temp;
 
-  displayForecast();
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "750e6f3aa3ba2abb97151b2ee35e5ad2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 // units conversion -->
@@ -120,7 +127,8 @@ celciusLink.addEventListener("click", displayCelciusTemperature);
 
 // display forecast -->
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
