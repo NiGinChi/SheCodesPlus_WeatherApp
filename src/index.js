@@ -84,12 +84,46 @@ function showWeather(response) {
   )}km/h`;
   document.querySelector(
     "#todaySunrise"
-  ).innerHTML = `${response.data.main.sunrise}`;
+  ).innerHTML = `${response.data.main.sunrise})`;
   document.querySelector(
     "#todaySunset"
   ).innerHTML = `${response.data.main.sunset}`;
   document.querySelector("#todayTemperature-description").innerHTML =
     response.data.weather[0].main;
+
+  function formatSunrise(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let hours = date.getHours() % 12;
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+
+    return `${hours}:${minutes}`;
+  }
+
+  function formatSunset(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let hours = date.getHours() % 12;
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+
+    return `${hours}:${minutes}`;
+  }
+
+  let sunriseElement = document.querySelector("#todaySunrise");
+  let sunsetElement = document.querySelector("#todaySunset");
+
+  sunriseElement.innerHTML = formatSunrise(response.data.sys.sunrise);
+  sunsetElement.innerHTML = formatSunset(response.data.sys.sunset);
 
   let iconElement = document.querySelector("#icon");
 
@@ -117,6 +151,7 @@ let celciusTemperature = null;
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
+  alert("Information: Forecast temperatures will remain displayed in Celcius.");
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   let fahrenheittemperatureElement =
     document.querySelector("#todayTemperature");
@@ -149,20 +184,20 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
         `
     <div class="col-2">
       <div class="weather-forecast-date">
         ${formatForecastDay(forecastDay.dt)}</div>
-        ${index}
+       
       <img src="http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
       }@2x.png" alt="" width="42" />
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">
-          ${Math.round(forecastDay.temp.max)}°</span>
+          ${Math.round(forecastDay.temp.max)}°</span> | 
           <span class="weather-forecast-temperature-min">
           ${Math.round(forecastDay.temp.min)}°</span>
         </div>
@@ -185,26 +220,26 @@ document
       alert("Thank you! 💌 Your order has been recieved by the Wetterfee.");
 
       forecast.forEach(function (forecastDay, index) {
-        if (index < 6) {
-          forecastHTML =
-            forecastHTML +
+        if (index > 0 && index < 7) {
+          funButtonHTML =
+            funButtonHTML +
             `
     <div class="col-2">
       <div class="weather-forecast-date">
         ${formatForecastDay(forecastDay.dt)}</div>
       <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" width="42" />
       <div class="weather-forecast-temperatures">
-        <span class="weather-forecast-temperature-max">
-          ${favouriteTemperature}°</span>
-          <span class="weather-forecast-temperature-min">
+        <span class="weather-fun-temperature-max">
+          ${favouriteTemperature}°</span> | 
+          <span class="weather-fun-temperature-min">
           ${favouriteTemperature - 1}°</span>
         </div>
       </div>    
    `;
         }
       });
-      forecastHTML = forecastHTML + `</div>`;
-      forecastElement.innerHTML = forecastHTML;
+      funButtonHTML = funButtonHTML + `</div>`;
+      forecastElement.innerHTML = funButtonHTML;
     } else {
       alert(
         "Warning ⚠ Without your input we cannot contact the Wetterfee to book your favourite weather."
