@@ -196,9 +196,9 @@ function displayForecast(response) {
         forecastDay.weather[0].icon
       }@2x.png" alt="" width="42" />
       <div class="weather-forecast-temperatures">
-        <span id="weather-forecast-temperature-max">
+        <span class="weather-forecast-temperature-max">
           ${Math.round(forecastDay.temp.max)}°</span> | 
-          <span id="weather-forecast-temperature-min">
+          <span class="weather-forecast-temperature-min">
           ${Math.round(forecastDay.temp.min)}°</span>
         </div>
       </div>    
@@ -220,7 +220,7 @@ document
       alert("Thank you! 💌 Your order has been recieved by the Wetterfee.");
 
       let funTemperatures = document.querySelectorAll(
-        "#weather-forecast-temperature-max"
+        ".weather-forecast-temperature-max"
       );
       funTemperatures.forEach(function (forecastItem) {
         forecastItem.innerHTML = favouriteTemperature;
