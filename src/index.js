@@ -192,13 +192,13 @@ function displayForecast(response) {
       <div class="weather-forecast-date">
         ${formatForecastDay(forecastDay.dt)}</div>
        
-      <img src="http://openweathermap.org/img/wn/${
+      <img id="forecast-icon" src="http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
       }@2x.png" alt="" width="42" />
       <div class="weather-forecast-temperatures">
-        <span class="weather-forecast-temperature-max">
+        <span id="weather-forecast-temperature-max">
           ${Math.round(forecastDay.temp.max)}°</span> | 
-          <span class="weather-forecast-temperature-min">
+          <span id="weather-forecast-temperature-min">
           ${Math.round(forecastDay.temp.min)}°</span>
         </div>
       </div>    
@@ -219,27 +219,17 @@ document
     if (favouriteTemperature.length) {
       alert("Thank you! 💌 Your order has been recieved by the Wetterfee.");
 
-      forecast.forEach(function (forecastDay, index) {
-        if (index > 0 && index < 7) {
-          funButtonHTML =
-            funButtonHTML +
-            `
-    <div class="col-2">
-      <div class="weather-forecast-date">
-        ${formatForecastDay(forecastDay.dt)}</div>
-      <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" width="42" />
-      <div class="weather-forecast-temperatures">
-        <span class="weather-fun-temperature-max">
-          ${favouriteTemperature}°</span> | 
-          <span class="weather-fun-temperature-min">
-          ${favouriteTemperature - 1}°</span>
-        </div>
-      </div>    
-   `;
-        }
+      let funTemperatures = document.querySelectorAll(
+        "#weather-forecast-temperature-max"
+      );
+      funTemperatures.forEach(function (forecastItem) {
+        forecastItem.innerHTML = favouriteTemperature;
       });
-      funButtonHTML = funButtonHTML + `</div>`;
-      forecastElement.innerHTML = funButtonHTML;
+
+      let funTemperatureIcons = document.querySelectorAll("#forecast-icon");
+      funTemperatureIcons.forEach(function (forecastIcon) {
+        forecastIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/01d@2x.png" alt"sun" width="42"/>`;
+      });
     } else {
       alert(
         "Warning ⚠ Without your input we cannot contact the Wetterfee to book your favourite weather."
