@@ -192,7 +192,7 @@ function displayForecast(response) {
       <div class="weather-forecast-date">
         ${formatForecastDay(forecastDay.dt)}</div>
        
-      <img id="forecast-icon" src="http://openweathermap.org/img/wn/${
+      <img id="forecast-icon" src="https://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
       }@2x.png" alt="" width="42" />
       <div class="weather-forecast-temperatures">
@@ -228,7 +228,10 @@ document
 
       let funTemperatureIcons = document.querySelectorAll("#forecast-icon");
       funTemperatureIcons.forEach(function (forecastIcon) {
-        forecastIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/01d@2x.png" alt"sun" width="42"/>`;
+        forecastIcon.setAttribute(
+          "src",
+          "https://openweathermap.org/img/wn/01d@2x.png"
+        );
       });
     } else {
       alert(

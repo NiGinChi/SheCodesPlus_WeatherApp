@@ -1,11 +1,12 @@
 body {
   font-family: "Poppins", sans-serif;
+  color: azure;
 }
 
 h1 {
   text-align: left;
   text-shadow: 1px 5px 26px rgba(9, 216, 189, 0.6);
-  color: #17a2b8;
+  color: azure;
   font-size: 48px;
   font-weight: 400;
   line-height: 1;
@@ -18,7 +19,7 @@ p {
 }
 
 a {
-  color: #17a2b8;
+  color: #00d5e1;
 }
 
 ul {
@@ -39,6 +40,13 @@ li:first-letter {
 }
 
 .weather-app {
+  box-shadow: 10px 10px 20px rgba(2, 70, 86, 0.7);
+  background: radial-gradient(
+    993px at 0.5% 98.5%,
+    rgb(0, 239, 247) 0%,
+    rgb(0, 122, 147) 46.7%,
+    rgba(0, 29, 72, 0.705) 100.2%
+  );
   max-width: 600px;
   margin: 30px auto;
   padding: 30px;
@@ -73,6 +81,26 @@ li:first-letter {
   line-height: 20px;
 }
 
+#currentButton:hover {
+  background: #047892;
+  transition: all 200ms ease-in-out;
+}
+
+#searchButton:hover {
+  background: #0093a8;
+  transition: all 200ms ease-in-out;
+}
+
+#perfectWeatherbutton:hover {
+  background: #047892;
+  transition: all 200ms ease-in-out;
+}
+
+#currentButton {
+  position: relative;
+  margin-bottom: 50px;
+}
+
 .today-weather img {
   margin-left: 10px;
   margin-right: 5px;
@@ -94,7 +122,7 @@ li:first-letter {
 }
 
 .today-weather .active {
-  color: black;
+  color: rgba(2, 70, 86, 0.7);
   cursor: default;
 }
 
@@ -108,7 +136,6 @@ li:first-letter {
 }
 
 .weather-forecast-date {
-  text-align: center;
   font-size: 16px;
   font-weight: 400;
   opacity: 0.6;
@@ -122,10 +149,20 @@ li:first-letter {
 }
 
 .weather-forecast-temperatures {
-  text-align: center;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .weather-forecast-temperature-min {
+  font-size: 11px;
+  margin: 0 auto;
   opacity: 0.6;
+}
+
+#forecast {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  color: rgba(2, 70, 86, 0.7);
 }
